@@ -16,13 +16,12 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, className =
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(element);
-        }
+        // Trigger the animation every time the element enters the viewport.
+        // It will also reset when it leaves, making the animation re-run on re-entry.
+        setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.1,
+        threshold: 0.1, // Animate when 10% of the element is visible
       }
     );
 

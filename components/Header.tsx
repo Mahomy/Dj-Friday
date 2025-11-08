@@ -1,5 +1,45 @@
 import React, { useState, useEffect } from 'react';
 
+// Custom smooth scroll function with easing
+const smoothScroll = (targetSelector: string, duration: number) => {
+  const targetElement = document.querySelector(targetSelector) as HTMLElement;
+  if (!targetElement) return;
+
+  const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+  const computedStyle = window.getComputedStyle(targetElement);
+  // Respect the scroll-margin-top property on the target element
+  const scrollMarginTop = parseFloat(computedStyle.scrollMarginTop);
+  const finalPosition = targetPosition - scrollMarginTop;
+
+  const startPosition = window.pageYOffset;
+  const distance = finalPosition - startPosition;
+  let startTime: number | null = null;
+
+  // easeInOutQuad easing function
+  const easeInOutQuad = (t: number, b: number, c: number, d: number): number => {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  };
+
+  const animation = (currentTime: number) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+
+    if (timeElapsed < duration) {
+      window.scrollTo(0, easeInOutQuad(timeElapsed, startPosition, distance, duration));
+      requestAnimationFrame(animation);
+    } else {
+      // Ensure it ends exactly at the final position
+      window.scrollTo(0, finalPosition);
+    }
+  };
+
+  requestAnimationFrame(animation);
+};
+
+
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,10 +70,7 @@ const Header: React.FC = () => {
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    smoothScroll(href, 800); // Use the custom scroll function with an 800ms duration
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
