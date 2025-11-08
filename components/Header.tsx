@@ -28,25 +28,38 @@ const Header: React.FC = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(href);
+    if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
   };
 
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-bg/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="#home" className="text-2xl font-bold text-gradient">
+          <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="text-2xl font-bold text-gradient">
             FORTUNELA SOUNDS
           </a>
           <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="text-light-text hover:text-brand-blue transition-colors duration-300 font-medium">
+              <a 
+                key={link.name} 
+                href={link.href} 
+                onClick={(e) => handleLinkClick(e, link.href)}
+                className="text-light-text hover:text-brand-blue transition-colors duration-300 font-medium">
                 {link.name}
               </a>
             ))}
           </nav>
-          <a href="#contact" className="hidden md:inline-block bg-gradient-to-r from-brand-blue to-brand-purple text-white font-bold py-2 px-6 rounded-full hover:scale-105 transform transition-transform duration-300">
+          <a href="#contact" 
+             onClick={(e) => handleLinkClick(e, '#contact')}
+             className="hidden md:inline-block bg-gradient-to-r from-brand-blue to-brand-purple text-white font-bold py-2 px-6 rounded-full hover:scale-105 transform transition-transform duration-300">
             Book Now
           </a>
           <div className="md:hidden">
@@ -66,7 +79,7 @@ const Header: React.FC = () => {
             <a 
               key={link.name} 
               href={link.href} 
-              onClick={handleLinkClick}
+              onClick={(e) => handleLinkClick(e, link.href)}
               className={`text-3xl font-bold text-light-text hover:text-brand-blue transition-all duration-300 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
               style={{ transitionDelay: `${isMenuOpen ? 150 + index * 100 : 0}ms` }}
             >
@@ -75,7 +88,7 @@ const Header: React.FC = () => {
           ))}
           <a 
             href="#contact" 
-            onClick={handleLinkClick}
+            onClick={(e) => handleLinkClick(e, '#contact')}
             className={`mt-8 bg-gradient-to-r from-brand-blue to-brand-purple text-white font-bold py-3 px-8 rounded-full hover:scale-105 transform transition-all duration-300 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
             style={{ transitionDelay: `${isMenuOpen ? 150 + navLinks.length * 100 : 0}ms` }}
           >
