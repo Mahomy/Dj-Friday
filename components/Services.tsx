@@ -13,7 +13,7 @@ const servicesData: Service[] = [
   {
     title: 'Sound Hire Kit',
     price: 'From R3000.00',
-    description: 'Our comprehensive sound package, perfect for medium-sized events. As seen on our standard invoice.',
+    description: 'Our comprehensive sound package, perfect for medium-sized events.',
     features: [
       '2 x Stand Speaker Tops',
       'CDJs (Pioneer) + Mixer (Behringer)',
