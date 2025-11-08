@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
     <section id="home" className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
       <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
       <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <img src="https://picsum.photos/seed/djconsole/1920/1080" alt="DJ at a console during an event" className="absolute inset-0 w-full h-full object-cover animate-kenburns"/>
+        <img src="https://images.unsplash.com/photo-1526979118433-63c7344f06f1?ixid=M3w0MzUxNjF8MHwxfHNlYXJjaHw1fHxzb3VuZCUyMHN5c3RlbXxlbnwwfHx8fDE3NDIyMTYzMjl8MA&ixlib=rb-4.0.3&orientation=landscape?fit=crop&crop=entropy%2Cfaces&auto=format%2Ccompress&w=1280" alt="Professional sound system speakers at an event" className="absolute inset-0 w-full h-full object-cover animate-kenburns"/>
       </div>
       <div className="relative z-20 container mx-auto px-6">
         <h1 className="text-4xl md:text-7xl font-black uppercase tracking-wider mb-4">

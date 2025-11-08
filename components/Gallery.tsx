@@ -2,12 +2,12 @@ import React from 'react';
 import AnimatedSection from './AnimatedSection';
 
 const images = [
-  'https://picsum.photos/seed/party1/600/400',
-  'https://picsum.photos/seed/party2/600/400',
-  'https://picsum.photos/seed/party3/600/400',
-  'https://picsum.photos/seed/party4/600/400',
-  'https://picsum.photos/seed/party5/600/400',
-  'https://picsum.photos/seed/party6/600/400',
+  'https://images.unsplash.com/photo-1647160494152-4c8eb24a844b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870',
+  'https://images.unsplash.com/photo-1616709062048-788acece6a51?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1031',
+  'https://images.unsplash.com/photo-1519664699825-ddb2c64076bf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870',
+  'https://images.unsplash.com/photo-1657271535048-f0e8ebc39746?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870',
+  'https://images.unsplash.com/photo-1562046030-101e60ae2c75?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=873',
+  'https://images.unsplash.com/photo-1528508670332-4c687dae6295?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=698',
 ];
 
 const Gallery: React.FC = () => {
