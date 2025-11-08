@@ -44,7 +44,7 @@ const Header: React.FC = () => {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-bg/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="text-2xl font-bold text-gradient">
-            FORTUNELA SOUNDS
+            FORTUNETELA SOUNDS
           </a>
           <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => (

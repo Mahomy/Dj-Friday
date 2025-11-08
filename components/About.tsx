@@ -8,10 +8,10 @@ const About: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <AnimatedSection className="order-2 md:order-1">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              About <span className="text-gradient">Fortunela Sounds</span>
+              About <span className="text-gradient">Fortunetela Sounds</span>
             </h2>
             <p className="text-medium-text mb-6 leading-relaxed">
-              Based in Soshanguve South, Fortunela Sounds & Records is your premier partner for event entertainment. We specialize in providing high-quality sound hire and professional DJ services for a wide range of events, from private parties to corporate functions.
+              Based in Soshanguve South, Fortunetela Sounds & Records is your premier partner for event entertainment. We specialize in providing high-quality sound hire and professional DJ services for a wide range of events, from private parties to corporate functions.
             </p>
             <p className="text-medium-text mb-8 leading-relaxed">
               Our commitment is to deliver an exceptional audio experience. With top-of-the-line equipment from industry leaders like Pioneer and Behringer, we ensure crystal-clear sound that brings your event to life. We handle everything, including transport and setup, so you can focus on enjoying the moment.
